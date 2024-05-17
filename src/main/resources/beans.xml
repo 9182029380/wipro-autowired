@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id ="ad" class="org.wipro.XML.Address">
+        <property name="street" value="street-1"/>
+        <property name="city" value="suncity"/>
+        <property name="state" value="TS"/>
+        <property name="zip" value="509203"/>
+    </bean>
+    <bean id ="ad1" class="org.wipro.XML.Address" primary="true" >
+        <property name="street" value="street-2"/>
+        <property name="city" value="kurnool"/>
+        <property name="state" value="AP"/>
+        <property name="zip" value="509220"/>
+    </bean>
+    <bean id ="ad2" class="org.wipro.XML.Address">
+        <property name="street" value="ward1"/>
+        <property name="city" value="Pune"/>
+        <property name="state" value="MH"/>
+        <property name="zip" value="509298"/>
+    </bean>
+
+    <bean name="student" class="org.wipro.XML.Student" autowire="constructor">
+        <constructor-arg  value ="sharathkumar"/>
+        <constructor-arg value="31"/>
+        <constructor-arg ref="ad2"/>
+
+    </bean>
+
+</beans>
